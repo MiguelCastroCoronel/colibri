@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Pinturería, Pintura, Hogar, Color, Latex, Colibri">
+    <meta name="description" content="Colibri Pinturerias - Pinturerías">
+    <meta name="author" content="Grupo 9">
+    <title>Colibri Pinturerias</title>
+    <link rel="icon" type="image/x-icon" href="pictures/colibri-icono-24.ico">
+
+    <!-- Referencia a hoja de Estilos CSS (Bootstrap) -->
+    <link rel="stylesheet" href="bootstrap53/css/bootstrap.min.css"> 
+    <!-- Referencia a scripts JS (Bootstrap) -->
+    <script src="bootstrap53/js/bootstrap.bundle.min.js"></script> 
+    <!-- Referencia a hoja de Estilos CSS (w3Schools) -->
+    <link rel="stylesheet" href="w3schools/w3.css">
+    <!-- Referencia a hoja de Estilos CSS Personalizadas -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- Referencia a hoja de JS Personalizada -->
+    <script src="/js/js.js"></script>
+</head>
+
+<body>
+<!-- Cabecera del documento -->
+<header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(184, 5, 184); opacity: 88%;">
+        <div class="container-fluid">        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#miNavbar" aria-controls="miNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="pictures/list-view-24-blanco.ico" alt="List">
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="pictures/house-24-blanco.ico" alt="House">
+            </a>                
+            <div class="collapse navbar-collapse" id="miNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">        <!-- por defecto se usa la clase me-auto (izquierda), para alionear a la derecha usar la clase ms-auto -->
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="#sucursales">Sucursales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="#ofertas">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="#marcas">Marcas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="#contacto">Contacto</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="clientes.html">API Clientes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="index_form.html" target="_self" style="color: yellow;">Reclamos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    </header>    
+
+    <!-- Cuerpo Principal del documento -->
+    <main><br><br><br>
+    <h1>Nuestros 10 Clientes frecuentes en la API</h1><br>
+    <!--  Monta el Objeto Vue-->    
+    <div id="app">
+        
+
+
+            <table border="0">
+            <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>User_name</th>
+            <th>e-mail</th>
+            <th>Ciudad</th>
+            </tr>
+            <tr v-for="elemento in clientesAll">
+                <td>{{elemento.id}}</td>
+                <td>{{elemento.name}}</td>
+                <td>{{elemento.username}}</td>
+                <td>{{elemento.email}}</td>
+                <td>{{elemento.address.city}}</td>
+                </tr>
+              
+
+        </table>
+
+    </div><br>
+    <p>Fuente: https://jsonplaceholder.typicode.com/users</p>
+    </main>
+ 
+    <!-- Contenedor al pie (w3Schools + Bootstrap)-->
+    <footer>
+        <!-- Redes + Quienes somos + Mapa del Sitio-->
+        <div class="w3-container w3-padding-64 w3-theme-l5 clasePie">
+            <div class="w3-row">
+                <!-- Redes Sociales -->
+                <div class="w3-col m4">
+                    <h4>Síganos</h4>
+                    <a class="w3-button w3-large w3-white" href="https://es-la.facebook.com/login.php" title="Facebook" target="_blank"><img src="pictures/facebook-3-24.ico"></a>
+                    <a class="w3-button w3-large w3-white" href="https://twitter.com/login/" title="Twitter" target="_blank"><img src="pictures/twitter-3-24.ico"></a>
+                    <a class="w3-button w3-large w3-white" href="https://www.instagram.com/accounts/login/" title="Instragram" target="_blank"><img src="pictures/instagram-24.ico"></a>
+                    <a class="w3-button w3-large w3-white" href="https://www.linkedin.com/login?fromSignIn=true" title="Linkedin" target="_blank"><img src="pictures/linkedin-6-24.ico"></a>
+                    <div class="clasePower">
+                        <h4>Powered by</h4>
+                        <a href="index_404.html" target="_blank">Grupo 9 - CaC23020</a>
+                        <p style="margin-top: 10px;font-size: 12px;">&#169Derechos Reservados</p>
+                    </div>
+                </div>
+                <!-- Mapa del sitio (w3Schools)-->
+                <div class="w3-col m4">
+                    <h4>Mapa del sitio</h4>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#sucursales">Sucursales</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#ofertas">Ofertas</a></li>
+                        <li><a href="#marcas">Marcas</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="clientes.html">API Colores</a></li>
+                        <li><a href="index_form.html">Reclamos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </footer>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>    
+<script src="./js/main.js"></script>
+
+</body>
+</html>
