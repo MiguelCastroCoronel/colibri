@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Pinturería, Pintura, Hogar, Color, Latex, Colibri">
+    <meta name="description" content="Colibri Pinturerias - Pinturerías">
+    <meta name="author" content="Grupo 9">
+    <title>Colibri Pinturerias</title>
+    <link rel="icon" type="image/x-icon" href="pictures/colibri-icono-24.ico">
+
+    <!-- Referencia a hoja de Estilos CSS (Bootstrap) -->
+    <link rel="stylesheet" href="bootstrap53/css/bootstrap.min.css">
+    <!-- Referencia a scripts JS (Bootstrap) -->
+    <script src="bootstrap53/js/bootstrap.bundle.min.js"></script>
+    <!-- Referencia a hoja de Estilos CSS (w3Schools) -->
+    <link rel="stylesheet" href="w3schools/w3.css">
+    <!-- Referencia a hoja de Estilos CSS Personalizadas -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- Referencia a hoja de JS Personalizada -->
+    <!-- <script src="/js/js.js"></script> -->
+
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+    <header id="header">
+
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(184, 5, 184); opacity: 88%;">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#miNavbar"
+                    aria-controls="miNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="pictures/list-view-24-blanco.ico" alt="List">
+                </button>
+                <a class="navbar-brand" href="index.html#">
+                    <img src="pictures/house-24-blanco.ico" alt="House">
+                </a>
+                <div class="collapse navbar-collapse" id="miNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <!-- por defecto se usa la clase me-auto (izquierda), para alionear a la derecha usar la clase ms-auto -->
+                        <li class="nav-item">
+                            <a class="nav-link miItem" href="./index.html#sucursales">Sucursales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link miItem" href="./index.html#servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link miItem" href="./index.html#ofertas">Ofertas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link miItem" href="./index.html#marcas">Marcas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link miItem" href="./index.html#contacto">Contacto</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link miItem" href="carrito.html">Carrito de COMPRAS</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link miItem" href="index_form.html" target="_self"
+                                style="color: yellow;">Reclamos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main><br><br><br>
+        <br><br><br>
+           <!--  Monta el Objeto Vue-->
+
+        <div id="app" class="container">
+            <h1>Pinturería COLIBRÌ</h1> <BR></BR>
+            <h1>Alta, Baja, Modificación de Productos</h1><br>
+            <br>
+            <a class="btn btn-primary" href="./producto_nuevo.html">Nuevo</a>
+            <br><br>
+            <div v-if="error">
+                <p>Lo sentimos , ........</p>
+            </div>
+            <div v-else>
+                <section v-if="cargando">
+                    <div class="spinner-border"></div>
+                    <p>Cargando .....</p>
+                </section>
+                <section v-else>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Cod. Barras</th>
+                                    <th scope="col">Marca</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Stock</th>
+                                    <th scope="col">Imagen</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="" v-for="producto in productos">
+                                    <td scope="row">{{producto.id}}</td>
+                                    <td>{{producto.cod_barra}}</td>
+                                    <td>{{producto.marca}}</td>
+                                    <td>{{producto.nombre}}</td>
+                                    <td>{{producto.precio}}</td>
+                                    <td>{{producto.stock}}</td>
+                                    <td>
+                                        <img width="60" :src="producto.imagen" :alt="producto.nombre">
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-warning" :href="'producto_update.html?id='+ producto.id">Editar</a>
+                                        <a class="btn btn-success" :href="'imprimir_etiqueta.html?id='+ producto.id">Etiqueta</a>
+                                        <button type="button" class="btn btn-danger" v-on:click="eliminar(producto.id)">Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <p>Fuente: http://colibri.pythonanywhere.com/productos</p>
+    </main>
+    <footer>
+        <!-- Redes + Quienes somos + Mapa del Sitio-->
+        <div class="w3-container w3-padding-64 w3-theme-l5 clasePie">
+            <div class="w3-row">
+                <!-- Redes Sociales -->
+                <div class="w3-col m4">
+                    <h4>Síganos</h4>
+                    <a class="w3-button w3-large w3-white" href="https://es-la.facebook.com/login.php" title="Facebook"
+                        target="_blank"><img src="pictures/facebook-3-24.ico"></a>
+                    <a class="w3-button w3-large w3-white" href="https://twitter.com/login/" title="Twitter"
+                        target="_blank"><img src="pictures/twitter-3-24.ico"></a>
+                    <a class="w3-button w3-large w3-white" href="https://www.instagram.com/accounts/login/"
+                        title="Instragram" target="_blank"><img src="pictures/instagram-24.ico"></a>
+                    <a class="w3-button w3-large w3-white" href="https://www.linkedin.com/login?fromSignIn=true"
+                        title="Linkedin" target="_blank"><img src="pictures/linkedin-6-24.ico"></a>
+                    <div class="clasePower">
+                        <h4>Powered by</h4>
+                        <a href="index_404.html" target="_blank">Grupo 9 - CaC23020</a>
+                        <p style="margin-top: 10px;font-size: 12px;">&#169Derechos Reservados</p>
+                    </div>
+                </div>
+                <!-- Mapa del sitio (w3Schools)-->
+                <div class="w3-col m4">
+                    <h4>Mapa del sitio</h4>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#sucursales">Sucursales</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#ofertas">Ofertas</a></li>
+                        <li><a href="#marcas">Marcas</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="clientes.html">API Colores</a></li>
+                        <li><a href="index_form.html">Reclamos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+    <script src = "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+        integrity = "sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin = "anonymous" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
+    <script src="./js/productos.js"></script>
+</body>
+
+</html>

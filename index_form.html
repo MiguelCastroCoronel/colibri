@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,17 +10,16 @@
     <title>Colibri Pinturerias - Reclamos</title>
     <link rel="icon" type="image/x-icon" href="pictures/colibri-icono-24.ico">
 
-    <!-- Referencia a hoja de Estilos CSS (w3Schools) -->
-    <link rel="stylesheet" href="w3schools/w3.css">
-    <link rel="stylesheet" href="w3schools/font-awesome.min.css">
-    <link rel="stylesheet" href="w3schools/w3-theme-purple.css">
-    
-    <!-- Referencia a hoja de Estilos CSS Personalizadas -->
-    <link rel="stylesheet" href="css/estilos.css">
-
-     <!-- Referencia a hoja de JS Personalizada -->
-     <script src="/js/js.js"></script>
-
+       <!-- Referencia a hoja de Estilos CSS (Bootstrap) -->
+       <link rel="stylesheet" href="bootstrap53/css/bootstrap.min.css"> 
+       <!-- Referencia a scripts JS (Bootstrap) -->
+       <script src="bootstrap53/js/bootstrap.bundle.min.js"></script> 
+       <!-- Referencia a hoja de Estilos CSS (w3Schools) -->
+       <link rel="stylesheet" href="w3schools/w3.css">
+       <!-- Referencia a hoja de Estilos CSS Personalizadas -->
+       <link rel="stylesheet" href="css/estilos.css">
+       <!-- Referencia a hoja de JS Personalizada -->
+       <script src="/js/js.js"></script>
 
 
 </head>
@@ -27,13 +27,54 @@
 
     <header>
     <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-theme-d2 w3-left-align" style="height: 56px;">
-            <a href="index.html" class="w3-bar-item w3-button w3-hover-white w3-white">
-            <img src="pictures/house-32-violeta.ico" alt="Home" style="padding: 8px;"></a>
-            <a class="w3-bar-item w3-button w3-hide-small w3-hover-white w3-right" style="padding-top: 20px; font-size: 18px;">Reclamos</a>
+      <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(184, 5, 184); opacity: 88%;">
+        <div class="container-fluid">        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#miNavbar" aria-controls="miNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="pictures/list-view-24-blanco.ico" alt="List">
+            </button>
+            <a class="navbar-brand" href="index.html#">
+                <img src="pictures/house-24-blanco.ico" alt="House">
+            </a>                
+            <div class="collapse navbar-collapse" id="miNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">        <!-- por defecto se usa la clase me-auto (izquierda), para alionear a la derecha usar la clase ms-auto -->
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="./index.html#sucursales">Sucursales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="./index.html#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="./index.html#ofertas">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="./index.html#marcas">Marcas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="./index.html#contacto">Contacto</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="listar_productos.html">API Depósito Productos</a>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link miItem" href="index_form.html" target="_self" style="color: yellow;">Reclamos</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </nav>
+   
+
+
+
+
+
+
+
+
     </header>  
     <main>    
         <div class="w3-quarter"><br><br>

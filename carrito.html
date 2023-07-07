@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Pinturería, Pintura, Hogar, Color, Latex, Colibri">
+  <meta name="description" content="Colibri Pinturerias - Pinturerías">
+  <meta name="author" content="Grupo 9">
+  <title>Colibri Pinturerias</title>
+  <link rel="icon" type="image/x-icon" href="pictures/colibri-icono-24.ico">
+
+     <!-- Referencia a hoja de Estilos CSS (Bootstrap) -->
+     <link rel="stylesheet" href="bootstrap53/css/bootstrap.min.css"> 
+     <!-- Referencia a scripts JS (Bootstrap) -->
+     <script src="bootstrap53/js/bootstrap.bundle.min.js"></script> 
+     <!-- Referencia a hoja de Estilos CSS (w3Schools) -->
+     <link rel="stylesheet" href="w3schools/w3.css">
+     <!-- Referencia a hoja de Estilos CSS Personalizadas -->
+     <link rel="stylesheet" href="css/estilos.css">
+     <!-- Referencia a hoja de JS Personalizada -->
+     <script src="/js/js.js"></script>
+
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(184, 5, 184); opacity: 88%;">
+  <div class="container-fluid">        
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#miNavbar" aria-controls="miNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <img src="pictures/list-view-24-blanco.ico" alt="List">
+      </button>
+      <a class="navbar-brand" href="index.html#">
+          <img src="pictures/house-24-blanco.ico" alt="House">
+      </a>                
+      <div class="collapse navbar-collapse" id="miNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">        <!-- por defecto se usa la clase me-auto (izquierda), para alionear a la derecha usar la clase ms-auto -->
+              <li class="nav-item">
+                  <a class="nav-link miItem" href="#sucursales">Sucursales</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link miItem" href="#servicios">Servicios</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link miItem" href="#ofertas">Ofertas</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link miItem" href="#marcas">Marcas</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link miItem" href="#contacto">Contacto</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link miItem" href="listar_productos.html">API Depósito Productos</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link miItem" href="index_form.html" target="_self" style="color: yellow;">Reclamos</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+
+
+  </header>
+  <main><br><br><br><br><br><br>
+        <div class="container">
+            <h1>Carrito de COMPRAS</h1><br>
+            <div id="app" class=" d-flex  flex-row flex-wrap justify-content-around ">
+                <!-- <p>{{productos}}</p> -->
+                <div style="width: 200px;"  v-for="item of productos" class="card">
+                
+                    <img class="card-img-top" :src="item.imagen" :alt="item.nombre">
+                    <div class="card-body">
+                        <!-- <p class="card-text" id="codigo">{{item.id}}</p>-->
+                        <p class="card-title">{{item.nombre}}<p>
+                        <p class="card-text">Precio:{{item.precio}}</p>
+                        <p class="card-text">Stock:{{item.stock}}</p>
+                       <!-- <form action="">-->
+                            <label for="cantidad">Cantidad: </label>
+                            <input type="number" name="cantidad" id="cantidad" v-model="item.cantidad" class="form-control form-control-sm" >
+                            <button v-on:click="comprar(item)"  >Comprar</button> 
+                            <!-- al metodo comprar le paso el  objeto "item" comleto-->
+                        <!--</form>-->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/carrito.js"></script>
+
+</body>
+
+</html>

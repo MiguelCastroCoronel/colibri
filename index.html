@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,16 +12,32 @@
     <link rel="icon" type="image/x-icon" href="pictures/colibri-icono-24.ico">
 
     <!-- Referencia a hoja de Estilos CSS (Bootstrap) -->
-    <link rel="stylesheet" href="bootstrap53/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="bootstrap53/css/bootstrap.min.css">
     <!-- Referencia a scripts JS (Bootstrap) -->
-    <script src="bootstrap53/js/bootstrap.bundle.min.js"></script> 
+    <script src="bootstrap53/js/bootstrap.bundle.min.js"></script>
     <!-- Referencia a hoja de Estilos CSS (w3Schools) -->
     <link rel="stylesheet" href="w3schools/w3.css">
     <!-- Referencia a hoja de Estilos CSS Personalizadas -->
     <link rel="stylesheet" href="css/estilos.css">
     <!-- Referencia a hoja de JS Personalizada -->
     <script src="/js/js.js"></script>
-</head>
+    <script>
+        function loguear() 
+        {
+        let user = document.getElementById("usuario").value;
+        let pass = document.getElementById("clave").value;
+             
+        if (user == "Admin" && pass == "1234")
+        {
+            window.location = "listar_productos.html";
+        }
+        
+        else
+        {
+            alert("Datos ingresados incorrectos")
+        }
+        }
+    </script>
 
 <body>
 
@@ -29,15 +46,17 @@
 
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(184, 5, 184); opacity: 88%;">
-            <div class="container-fluid">        
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#miNavbar" aria-controls="miNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#miNavbar"
+                    aria-controls="miNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="pictures/list-view-24-blanco.ico" alt="List">
                 </button>
                 <a class="navbar-brand" href="#">
                     <img src="pictures/house-24-blanco.ico" alt="House">
-                </a>                
+                </a>
                 <div class="collapse navbar-collapse" id="miNavbar">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">        <!-- por defecto se usa la clase me-auto (izquierda), para alionear a la derecha usar la clase ms-auto -->
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <!-- por defecto se usa la clase me-auto (izquierda), para alionear a la derecha usar la clase ms-auto -->
                         <li class="nav-item">
                             <a class="nav-link miItem" href="#sucursales">Sucursales</a>
                         </li>
@@ -47,26 +66,40 @@
                         <li class="nav-item">
                             <a class="nav-link miItem" href="#ofertas">Ofertas</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link miItem" href="#marcas">Marcas</a>
-                        </li>
+                   
                         <li class="nav-item">
                             <a class="nav-link miItem" href="#contacto">Contacto</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link miItem" href="clientes.html">API Clientes</a>
+                            <a class="nav-link miItem" href="carrito.html">Carrito de COMPRAS</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link miItem" href="index_form.html" target="_self" style="color: yellow;">Reclamos</a>
+                            <a class="nav-link miItem" href="index_form.html" target="_self"
+                                style="color: yellow;">Reclamos</a>
                         </li>
+                        <li>
+                            <label for=""></label>
+                            <input type="text" placeholder="Usuario" id="usuario">
+
+                        </li>
+                        <li>
+                            <label for=""></label>
+                            <input type="password" placeholder="Contraseña" id="clave">
+                        </li>
+                        <li>
+                            <input type="boton" value="Acceder" onclick=loguear()>
+                        </li>
+
+
+
                     </ul>
                 </div>
             </div>
         </nav>
 
-    </header>    
+    </header>
 
     <!-- Cuerpo Principal del documento -->
     <main>
@@ -74,19 +107,29 @@
         <!-- Portada Carrousel (Bootstrap)-->
         <div id="carouselPortada" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="7" aria-label="Slide 8"></button>
-                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="5"
+                    aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="6"
+                    aria-label="Slide 7"></button>
+                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="7"
+                    aria-label="Slide 8"></button>
+                <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="8"
+                    aria-label="Slide 9"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="pictures/pintura_052_arcoiris_conceptual-logo.png" class="d-block w-100" alt="Portada Principal">
+                    <img src="pictures/pintura_052_arcoiris_conceptual-logo.png" class="d-block w-100"
+                        alt="Portada Principal">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>PONEMOS TODO EL COLOR A TU VIDA</h5>
                         <p>Desde 1950 somos los representantes del color en Argentina</p>
@@ -162,54 +205,64 @@
         <!-- Sucursales (Bootstrap) -->
         <div id="sucursales" class="claseSucur">
             <h2 style="text-align: center;color: yellow;">NUESTRAS SUCURSALES</h2>
-            <p style="text-align: center;color: white;">Ubicadas en puntos estratégicos de la ciudad para su comodidad</p>
+            <p style="text-align: center;color: white;">Ubicadas en puntos estratégicos de la ciudad para su comodidad
+            </p>
             <div class="card-group">
                 <!-- Tarjeta 1: Centro -->
                 <div class="card text-center">
-                    <img src="pictures/sucursal_centro_small.jpg" class="card-img-top" alt="Centro" style="width:100%;height: 313px;">
+                    <img src="pictures/sucursal_centro_small.jpg" class="card-img-top" alt="Centro"
+                        style="width:100%;height: 313px;">
                     <div class="card-body">
                         <h5 class="card-title">Sucursal Centro</h5>
                         <p class="card-text">En la zona comercial más activa de la ciudad</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><img src="pictures/map-marker-2-24.ico">&nbsp;&nbsp;San Martin 150</li>
+                        <li class="list-group-item"><img src="pictures/map-marker-2-24.ico">&nbsp;&nbsp;San Martin 150
+                        </li>
                         <li class="list-group-item"><img src="pictures/phone-24.ico">&nbsp;&nbsp;381 5888 999</li>
                         <li class="list-group-item"><img src="pictures/whatsapp-24.ico">&nbsp;&nbsp;381 3589 235</li>
                     </ul>
                     <div class="card-body">
-                        <a href="mailto:centro@colibri.com.ar" class="card-link"><img src="pictures/email-12-24.ico">&nbsp;&nbsp;centro@colibri.com.ar</a>
+                        <a href="mailto:centro@colibri.com.ar" class="card-link"><img
+                                src="pictures/email-12-24.ico">&nbsp;&nbsp;centro@colibri.com.ar</a>
                     </div>
                 </div>
                 <!-- Tarjeta 2: Norte -->
                 <div class="card text-center">
-                    <img src="pictures/sucursal_norte_small.jpg" class="card-img-top" alt="Norte" style="width:100%;height: 313px;">
+                    <img src="pictures/sucursal_norte_small.jpg" class="card-img-top" alt="Norte"
+                        style="width:100%;height: 313px;">
                     <div class="card-body">
                         <h5 class="card-title">Sucursal Norte</h5>
                         <p class="card-text">En zona norte de la ciudad también estamos</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><img src="pictures/map-marker-2-24.ico">&nbsp;&nbsp;Av. Norte 1650</li>
+                        <li class="list-group-item"><img src="pictures/map-marker-2-24.ico">&nbsp;&nbsp;Av. Norte 1650
+                        </li>
                         <li class="list-group-item"><img src="pictures/phone-24.ico">&nbsp;&nbsp;381 6123 456</li>
                         <li class="list-group-item"><img src="pictures/whatsapp-24.ico">&nbsp;&nbsp;381 5123 456</li>
                     </ul>
                     <div class="card-body">
-                        <a href="mailto:norte@colibri.com.ar" class="card-link"><img src="pictures/email-12-24.ico">&nbsp;&nbsp;norte@colibri.com.ar</a>
+                        <a href="mailto:norte@colibri.com.ar" class="card-link"><img
+                                src="pictures/email-12-24.ico">&nbsp;&nbsp;norte@colibri.com.ar</a>
                     </div>
                 </div>
                 <!-- Tarjeta 3: Sur -->
                 <div class="card text-center">
-                    <img src="pictures/sucursal_sur_small.jpg" class="card-img-top" alt="Sur" style="width:100%;height: 313px;">
+                    <img src="pictures/sucursal_sur_small.jpg" class="card-img-top" alt="Sur"
+                        style="width:100%;height: 313px;">
                     <div class="card-body">
                         <h5 class="card-title">Sucursal Sur</h5>
                         <p class="card-text">Para los que se encuentren sobre el acceso Sur</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><img src="pictures/map-marker-2-24.ico">&nbsp;&nbsp;Gral. Gutierrez 35</li>
+                        <li class="list-group-item"><img src="pictures/map-marker-2-24.ico">&nbsp;&nbsp;Gral. Gutierrez
+                            35</li>
                         <li class="list-group-item"><img src="pictures/phone-24.ico">&nbsp;&nbsp;381 7 9874 123</li>
                         <li class="list-group-item"><img src="pictures/whatsapp-24.ico">&nbsp;&nbsp;381 6 8899 357</li>
                     </ul>
                     <div class="card-body">
-                        <a href="mailto:sur@colibri.com.ar" class="card-link"><img src="pictures/email-12-24.ico">&nbsp;&nbsp;sur@colibri.com.ar</a>
+                        <a href="mailto:sur@colibri.com.ar" class="card-link"><img
+                                src="pictures/email-12-24.ico">&nbsp;&nbsp;sur@colibri.com.ar</a>
                     </div>
                 </div>
             </div>
@@ -225,11 +278,12 @@
                 <div class="col-sm-6 mb-3 mb-sm-10">
                     <div class="card text-center">
                         <div class="card-body">
-                            <img src="pictures/text-bg-color-64.ico" class="card-img-top" alt="Exteriores" style="width: auto;height: auto;">
+                            <img src="pictures/text-bg-color-64.ico" class="card-img-top" alt="Exteriores"
+                                style="width: auto;height: auto;">
                             <h5 class="card-title">Productos para Exteriores</h5>
                             <p class="card-text" style="font-style: italic;">
                                 Desde el tratamiento estético de sus paredes
-                                hasta los métodos de protección contra las inclemencias 
+                                hasta los métodos de protección contra las inclemencias
                                 climáticas
                             </p>
                             <a href="index_404.html" class="btn btn-primary">Visitar</a>
@@ -240,7 +294,8 @@
                 <div class="col-sm-6 mb-3 mb-sm-10">
                     <div class="card  text-center">
                         <div class="card-body">
-                            <img src="pictures/lamp-64.ico" class="card-img-top" alt="Interiores" style="width: auto;height: auto;">
+                            <img src="pictures/lamp-64.ico" class="card-img-top" alt="Interiores"
+                                style="width: auto;height: auto;">
                             <h5 class="card-title">Decoración de Interiores</h5>
                             <p class="card-text" style="font-style: italic;">
                                 Desde una amplia selección de colores y tonos, hasta el más
@@ -254,7 +309,8 @@
                 <div class="col-sm-6 mb-3 mb-sm-10">
                     <div class="card text-center">
                         <div class="card-body">
-                            <img src="pictures/door-8-64.ico" class="card-img-top" alt="Maderas" style="width: auto;height: auto;">
+                            <img src="pictures/door-8-64.ico" class="card-img-top" alt="Maderas"
+                                style="width: auto;height: auto;">
                             <h5 class="card-title">Línea para maderas</h5>
                             <p class="card-text" style="font-style: italic;">
                                 Gran variedad de elementos para el tratamiento de toda su
@@ -268,11 +324,12 @@
                 <div class="col-sm-6 mb-3 mb-sm-10">
                     <div class="card text-center">
                         <div class="card-body">
-                            <img src="pictures/paint-brush-64-fucsia.ico" class="card-img-top" alt="Insumos" style="width: auto;height: auto;">
+                            <img src="pictures/paint-brush-64-fucsia.ico" class="card-img-top" alt="Insumos"
+                                style="width: auto;height: auto;">
                             <h5 class="card-title">Insumos para el pintor</h5>
                             <p class="card-text" style="font-style: italic;">
                                 Herramientas de todo tipo, nacionales e importados, pinceles, pinzas,
-                                aire comprimido, medidores de tono, etc. 
+                                aire comprimido, medidores de tono, etc.
                             </p>
                             <a href="index_404.html" class="btn btn-primary">Visitar</a>
                         </div>
@@ -305,7 +362,8 @@
                     <li style="padding-left: 0px;padding-top: 20px;padding-bottom: 10px; margin-left: 0px;">
                         <!-- Botón Comprar (Bootstrap) -->
                         <div class="d-grid gap-2 col-1 mx-auto">
-                            <a href="index_404.html" class="btn btn-primary"><img src="pictures/cart-78-24.ico" alt="Cart" style="width: auto;height: auto;">Comprar</a>
+                            <a href="index_404.html" class="btn btn-primary"><img src="pictures/cart-78-24.ico"
+                                    alt="Cart" style="width: auto;height: auto;">Comprar</a>
                         </div>
                     </li>
                 </ul>
@@ -330,7 +388,8 @@
                     <li style="padding-left: 0px;padding-top: 20px;padding-bottom: 10px; margin-left: 0px;">
                         <!-- Botón Comprar (Bootstrap) -->
                         <div class="d-grid gap-2 col-1 mx-auto">
-                            <a href="index_404.html" class="btn btn-primary"><img src="pictures/cart-78-24.ico" alt="Cart" style="width: auto;height: auto;">Comprar</a>
+                            <a href="index_404.html" class="btn btn-primary"><img src="pictures/cart-78-24.ico"
+                                    alt="Cart" style="width: auto;height: auto;">Comprar</a>
                         </div>
                     </li>
                 </ul>
@@ -355,7 +414,8 @@
                     <li style="padding-left: 0px;padding-top: 20px;padding-bottom: 10px; margin-left: 0px;">
                         <!-- Botón Comprar (Bootstrap) -->
                         <div class="d-grid gap-2 col-1 mx-auto">
-                            <a href="index_404.html" class="btn btn-primary"><img src="pictures/cart-78-24.ico" alt="Cart" style="width: auto;height: auto;">Comprar</a>
+                            <a href="index_404.html" class="btn btn-primary"><img src="pictures/cart-78-24.ico"
+                                    alt="Cart" style="width: auto;height: auto;">Comprar</a>
                         </div>
                     </li>
                 </ul>
@@ -367,18 +427,24 @@
                 <div class="contSusc" style="border-radius: 10px 10px 0px 0px;">
                     <h2>Suscríbase Gratis a nuestro boletín de Ofertas</h2>
                     <p>
-                        Todos los días recibirá en su bandeja de entrada nuestro <span style="text-decoration: underline;">Boletín de ofertas</span> 
+                        Todos los días recibirá en su bandeja de entrada nuestro <span
+                            style="text-decoration: underline;">Boletín de ofertas</span>
                         y Cupones de Descuentos Exclusivos para que Ud. pueda aprovechar nuestros increíbles precios.
                     </p>
                 </div>
                 <div class="contSusc">
-                    <input type="text" placeholder="Su nombre" name="name" style="width: 100%;padding: 12px;margin: 8px 0;display: inline-block;border: 1px solid grey;box-sizing: border-box;" required>
-                    <input type="text" placeholder="Su correo electrónico" name="mail" style="width: 100%;padding: 12px;margin: 8px 0;display: inline-block;border: 1px solid grey;box-sizing: border-box;" required>
+                    <input type="text" placeholder="Su nombre" name="name"
+                        style="width: 100%;padding: 12px;margin: 8px 0;display: inline-block;border: 1px solid grey;box-sizing: border-box;"
+                        required>
+                    <input type="text" placeholder="Su correo electrónico" name="mail"
+                        style="width: 100%;padding: 12px;margin: 8px 0;display: inline-block;border: 1px solid grey;box-sizing: border-box;"
+                        required>
                 </div>
                 <div class="contSusc" style="border-radius: 0px 0px 10px 10px; padding-left:0px;">
                     <!-- Botón de suscripción (Bootstrap) -->
                     <div class="d-grid gap-2 col-1 mx-auto">
-                        <input type="submit" name="suscribirse" value="suscribirse" onclick= "return confirmacionSuscribirse()">
+                        <input type="submit" name="suscribirse" value="suscribirse"
+                            onclick="return confirmacionSuscribirse()">
                     </div>
                 </div>
             </form>
@@ -403,15 +469,18 @@
                     <h3>Sherwin Williams</h3>
                 </div>
                 <div class="w3-quarter">
-                    <img src="pictures/tersuave.jpg" alt="Tersuave" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <img src="pictures/tersuave.jpg" alt="Tersuave" style="width:45%"
+                        class="w3-circle w3-hover-opacity">
                     <h3>Tersuave</h3>
                 </div>
                 <div class="w3-quarter">
-                    <img src="pictures/plavicon1.jpg" alt="Plavicon" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <img src="pictures/plavicon1.jpg" alt="Plavicon" style="width:45%"
+                        class="w3-circle w3-hover-opacity">
                     <h3>Plavicon</h3>
                 </div>
                 <div class="w3-quarter">
-                    <img src="pictures/sinteplast1.jpg" alt="Sinteplast" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <img src="pictures/sinteplast1.jpg" alt="Sinteplast" style="width:45%"
+                        class="w3-circle w3-hover-opacity">
                     <h3>Sinteplast</h3>
                 </div>
                 <div class="w3-quarter">
@@ -419,7 +488,8 @@
                     <h3>Rust-Oleum</h3>
                 </div>
                 <div class="w3-quarter">
-                    <img src="pictures/petrilac1.jpg" alt="Petrilac" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <img src="pictures/petrilac1.jpg" alt="Petrilac" style="width:45%"
+                        class="w3-circle w3-hover-opacity">
                     <h3>Petrilac</h3>
                 </div>
             </div>
@@ -441,19 +511,20 @@
                 </div>
                 <!-- Formulario de contacto -->
                 <div class="w3-col m9">
-                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" target="_blank" style="border-radius: 10px;">
-                        <div class="w3-section">      
+                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" target="_blank"
+                        style="border-radius: 10px;">
+                        <div class="w3-section">
                             <label>Nombre</label>
                             <input class="w3-input" type="text" name="Nombre" required>
                         </div>
-                        <div class="w3-section">      
+                        <div class="w3-section">
                             <label>Correo electrónico</label>
                             <input class="w3-input" type="text" name="Email" required>
                         </div>
-                        <div class="w3-section">      
+                        <div class="w3-section">
                             <label>Mensaje</label>
                             <input class="w3-input" type="text" name="Mensaje" required>
-                        </div>  
+                        </div>
                         <!-- Combinación de clases bootstrap y w3schools  -->
                         <a href="mailto:atclientes@colibri.com.ar" class="btn btn-primary w3-right">Enviar</a>
                     </form>
@@ -471,10 +542,14 @@
                 <!-- Redes Sociales -->
                 <div class="w3-col m4">
                     <h4>Síganos</h4>
-                    <a class="w3-button w3-large w3-white" href="https://es-la.facebook.com/login.php" title="Facebook" target="_blank"><img src="pictures/facebook-3-24.ico"></a>
-                    <a class="w3-button w3-large w3-white" href="https://twitter.com/login/" title="Twitter" target="_blank"><img src="pictures/twitter-3-24.ico"></a>
-                    <a class="w3-button w3-large w3-white" href="https://www.instagram.com/accounts/login/" title="Instragram" target="_blank"><img src="pictures/instagram-24.ico"></a>
-                    <a class="w3-button w3-large w3-white" href="https://www.linkedin.com/login?fromSignIn=true" title="Linkedin" target="_blank"><img src="pictures/linkedin-6-24.ico"></a>
+                    <a class="w3-button w3-large w3-white" href="https://es-la.facebook.com/login.php" title="Facebook"
+                        target="_blank"><img src="pictures/facebook-3-24.ico"></a>
+                    <a class="w3-button w3-large w3-white" href="https://twitter.com/login/" title="Twitter"
+                        target="_blank"><img src="pictures/twitter-3-24.ico"></a>
+                    <a class="w3-button w3-large w3-white" href="https://www.instagram.com/accounts/login/"
+                        title="Instragram" target="_blank"><img src="pictures/instagram-24.ico"></a>
+                    <a class="w3-button w3-large w3-white" href="https://www.linkedin.com/login?fromSignIn=true"
+                        title="Linkedin" target="_blank"><img src="pictures/linkedin-6-24.ico"></a>
                     <div class="clasePower">
                         <h4>Powered by</h4>
                         <a href="index_404.html" target="_blank">Grupo 9 - CaC23020</a>
@@ -487,17 +562,22 @@
                         <div class="accordion" id="accordionFlushExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    Quiénes somos ?
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                        Quiénes somos ?
                                     </button>
                                 </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">El Colibrí SRL, fundada en 1950, con casa Central en San Martín 150, de nuestra ciudad. <br> CUIT 22-33333333-4 <br> IVA Responsable Inscripto</div>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">El Colibrí SRL, fundada en 1950, con casa Central en San
+                                        Martín 150, de nuestra ciudad. <br> CUIT 22-33333333-4 <br> IVA Responsable
+                                        Inscripto</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>                <!-- Mapa del sitio (w3Schools)-->
+                </div> <!-- Mapa del sitio (w3Schools)-->
                 <div class="w3-col m4">
                     <h4>Mapa del sitio</h4>
                     <ul>
@@ -507,7 +587,7 @@
                         <li><a href="#ofertas">Ofertas</a></li>
                         <li><a href="#marcas">Marcas</a></li>
                         <li><a href="#contacto">Contacto</a></li>
-                        <li><a href="clientes.html">API Colores</a></li>
+                        <li><a href="listar_productos.html">API Depósito Productos</a></li>
                         <li><a href="index_form.html">Reclamos</a></li>
                     </ul>
                 </div>
@@ -516,4 +596,5 @@
     </footer>
 
 </body>
+
 </html>
